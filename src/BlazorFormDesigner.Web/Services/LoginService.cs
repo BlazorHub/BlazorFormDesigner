@@ -25,7 +25,7 @@ namespace BlazorFormDesigner.Web.Services
         {
             try
             {
-                var response = await Client.PutAsJsonAsync("login", request);
+                var response = await Client.PutAsJsonAsync("user/login", request);
 
                 if (response.IsSuccessStatusCode)
                 {

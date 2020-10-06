@@ -1,5 +1,4 @@
 ﻿using BlazorFormDesigner.Web.Models;
-using System;
 
 namespace BlazorFormDesigner.Web.Responses
 {
@@ -11,13 +10,14 @@ namespace BlazorFormDesigner.Web.Responses
 
         public string Token { get; set; }
 
-        public string District { get; set; }
-
         internal User ToUser()
         {
-            var user = new User();
-            // TODO
-            return user;
+            return new User
+            {
+                Name = Name,
+                Token = Token,
+                Username = Username
+            };
         }
     }
 }

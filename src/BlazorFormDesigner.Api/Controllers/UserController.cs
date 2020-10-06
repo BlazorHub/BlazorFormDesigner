@@ -21,6 +21,7 @@ namespace BlazorFormDesigner.Api.Controllers
         }
 
         [HttpPut]
+        [Route("login")]
         public async Task<ActionResult<LoginResponse>> Login(LoginRequest request)
         {
             var user = await UserService.ValidatePassword(request.Username, request.Password);
