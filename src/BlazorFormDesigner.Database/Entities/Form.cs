@@ -19,7 +19,7 @@ namespace BlazorFormDesigner.Database.Entities
 
         public string Password { get; set; }
 
-        public string Creator { get; set; }
+        public string CreatorId { get; set; }
 
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         public DateTime CreationDate { get; set; }

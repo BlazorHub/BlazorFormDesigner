@@ -7,15 +7,15 @@ namespace BlazorFormDesigner.Database.Entities
     [JsonConverter(typeof(StringEnumConverter))]
     public enum QuestionType
     {
+        [EnumMember(Value = "Text question")]
+        Text,
+        [EnumMember(Value = "Numeric question")]
+        Numeric,
         [EnumMember(Value = "Binary question")]
         Binary,
-        [EnumMember(Value = "Proportional question")]
-        Proportional,
         [EnumMember(Value = "Single chioce question")]
         SingleChoice,
         [EnumMember(Value = "Multiple chioce question")]
-        MultipleChoice,
-        [EnumMember(Value = "Preference order question")]
-        PreferenceOrder,
+        MultipleChoice
     }
 }
