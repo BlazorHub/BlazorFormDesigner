@@ -9,7 +9,7 @@ using MongoDB.Driver;
 
 namespace BlazorFormDesigner.Database.Repositories
 {
-    class UserRepository : AppRepository, IUserRepository
+    public class UserRepository : AppRepository, IUserRepository
     {
         private readonly IMongoCollection<Entities.User> users;
 

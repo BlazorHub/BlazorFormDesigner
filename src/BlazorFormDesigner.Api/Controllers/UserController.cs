@@ -1,8 +1,10 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
+using BlazorFormDesigner.Api.Converters;
 using BlazorFormDesigner.BusinessLogic.Services;
 using BlazorFormDesigner.Web.Requests;
 using BlazorFormDesigner.Web.Responses;
+using LoginApp.WebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorFormDesigner.Api.Controllers
@@ -23,7 +25,7 @@ namespace BlazorFormDesigner.Api.Controllers
         {
             var user = await UserService.ValidatePassword(request.Username, request.Password);
 
-            var token = TokenService.GenerateToken(user.Username, user.District, user.Type);
+            var token = TokenService.GenerateToken(user.Username);
 
             return Ok(user.ToDTO(mapper, token));
         }

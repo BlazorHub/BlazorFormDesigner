@@ -7,7 +7,7 @@ using BlazorFormDesigner.Database.Settings;
 
 namespace BlazorFormDesigner.Database.Repositories
 {
-    class AppRepository
+    public class AppRepository
     {
         protected readonly DatabaseSettings settings;
         protected readonly IMapper mapper;
