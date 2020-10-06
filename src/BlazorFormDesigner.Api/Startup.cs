@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.IdGenerators;
+using AutoMapper;
 
 namespace BlazorFormDesigner.Api
 {
@@ -25,6 +26,8 @@ namespace BlazorFormDesigner.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddAutoMapper(typeof(Startup));
 
             //Database
             services.Configure<DatabaseSettings>(Configuration.GetSection(nameof(DatabaseSettings)));
