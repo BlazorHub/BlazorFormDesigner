@@ -29,5 +29,27 @@ namespace BlazorFormDesigner.Api.Controllers
 
             return Ok(user.ToDTO(mapper, token));
         }
+
+        [HttpPost]
+        public async Task<UserResponse> Create(UserRequest request)
+        {
+            var result = await UserService.Create(request.ToModel(mapper), request.Password);
+            return result.ToDTO(mapper);
+        }
+
+        [HttpPut]
+        public async Task<UserResponse> Update(UserRequest request)
+        {
+            var result = await UserService.Update(request.ToModel(mapper));
+            return result.ToDTO(mapper);
+        }
+
+        [HttpDelete]
+        [Route("{username}")]
+        public async Task<UserResponse> Delete([FromRoute] string username)
+        {
+            var result = await UserService.Delete(username);
+            return result.ToDTO(mapper);
+        }
     }
 }
