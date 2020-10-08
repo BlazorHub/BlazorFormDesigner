@@ -20,9 +20,22 @@ namespace BlazorFormDesigner.Api.Controllers
         }
 
         [HttpGet]
+        [Route("{id}")]
         public async Task<ActionResult<List<LoginResponse>>> GetAll()
         {
+            ValidateUser();
+
             var forms = await FormService.GetAll();
+
+            return Ok(forms);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<LoginResponse>> GetById([FromRoute] string id)
+        {
+            ValidateUser();
+
+            var forms = await FormService.GetById(id);
 
             return Ok(forms);
         }
@@ -30,9 +43,22 @@ namespace BlazorFormDesigner.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<Form>> Create(Form form)
         {
-            var result = await FormService.Create(form);
+            var user = ValidateUser();
 
-            return Ok(form);
+            var result = await FormService.Create(form, user);
+
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<ActionResult<Form>> Delete([FromRoute] string id)
+        {
+            var user = ValidateUser();
+
+            var result = await FormService.Delete(id, user);
+
+            return Ok(result);
         }
     }
 }

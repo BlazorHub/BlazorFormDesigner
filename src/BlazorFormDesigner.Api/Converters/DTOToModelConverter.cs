@@ -10,5 +10,20 @@ namespace BlazorFormDesigner.Api.Converters
         {
             return mapper.Map<User>(dto);
         }
+
+        public static Form ToModel(this FormRequest dto, IMapper mapper)
+        {
+            return mapper.Map<Form>(dto);
+        }
+
+        public static Question ToModel(this QuestionRequest dto, IMapper mapper)
+        {
+            return mapper.Map<Question>(dto);
+        }
+
+        public static Option ToModel(this OptionRequest dto, IMapper mapper)
+        {
+            return mapper.Map<Option>(dto);
+        }
     }
 }

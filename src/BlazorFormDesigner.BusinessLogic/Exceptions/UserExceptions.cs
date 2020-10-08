@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BlazorFormDesigner.Database.Exceptions
+namespace BlazorFormDesigner.BusinessLogic.Exceptions
 {
     public class DuplicateUsernameException : Exception
     {
