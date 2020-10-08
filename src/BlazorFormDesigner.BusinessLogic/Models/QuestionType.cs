@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace BlazorFormDesigner.Database.Entities
+namespace BlazorFormDesigner.BusinessLogic.Models
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public enum QuestionType

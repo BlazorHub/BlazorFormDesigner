@@ -10,6 +10,15 @@ namespace BlazorFormDesigner.Api.Services
             CreateMap<Database.Entities.User, BusinessLogic.Models.User>();
             CreateMap<BusinessLogic.Models.User, Database.Entities.User>();
 
+            CreateMap<Database.Entities.Form, BusinessLogic.Models.Form>();
+            CreateMap<BusinessLogic.Models.Form, Database.Entities.Form>();
+
+            CreateMap<Database.Entities.Question, BusinessLogic.Models.Question>();
+            CreateMap<BusinessLogic.Models.Question, Database.Entities.Question>();
+
+            CreateMap<Database.Entities.Option, BusinessLogic.Models.Option>();
+            CreateMap<BusinessLogic.Models.Option, Database.Entities.Option>();
+
             //Requests - Models
             CreateMap<Web.Requests.UserRequest, BusinessLogic.Models.User>();
 

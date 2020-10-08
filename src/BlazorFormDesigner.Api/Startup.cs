@@ -36,9 +36,11 @@ namespace BlazorFormDesigner.Api
 
             //Repositories
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IFormRepository, FormRepository>();
 
             //Services
             services.AddTransient<UserService, UserService>();
+            services.AddTransient<FormService, FormService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

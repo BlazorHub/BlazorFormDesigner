@@ -1,15 +1,12 @@
-﻿using BlazorFormDesigner.BusinessLogic.Models;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace BlazorFormDesigner.Database.Entities
+namespace BlazorFormDesigner.BusinessLogic.Models
 {
     public class Question
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; } = ObjectId.GenerateNewId().ToString();
+        public string Id { get; set; }
 
         public string Title { get; set; }
 
