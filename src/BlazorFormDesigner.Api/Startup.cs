@@ -11,6 +11,8 @@ using Microsoft.Extensions.Options;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.IdGenerators;
 using AutoMapper;
+using MongoDB.Bson.Serialization.Conventions;
+using MongoDB.Bson;
 
 namespace BlazorFormDesigner.Api
 {
@@ -49,6 +51,8 @@ namespace BlazorFormDesigner.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            ConventionRegistry.Register("EnumStringConvention", new ConventionPack { new EnumRepresentationConvention(BsonType.String) }, t => true);
 
             app.UseHttpsRedirection();
 
