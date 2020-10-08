@@ -25,8 +25,6 @@ namespace BlazorFormDesigner.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-
             services.AddAutoMapper(typeof(Startup));
 
             //Database
@@ -41,6 +39,8 @@ namespace BlazorFormDesigner.Api
             //Services
             services.AddTransient<UserService, UserService>();
             services.AddTransient<FormService, FormService>();
+
+            services.AddControllers().AddNewtonsoftJson();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

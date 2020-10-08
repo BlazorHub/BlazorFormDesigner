@@ -16,5 +16,20 @@ namespace BlazorFormDesigner.Database.Converters
         {
             return mapper.Map<Entities.User>(model);
         }
+
+        public static Entities.Form ToEntity(this Form model, IMapper mapper)
+        {
+            return mapper.Map<Entities.Form>(model);
+        }
+
+        public static Entities.Question ToEntity(this Question model, IMapper mapper)
+        {
+            return mapper.Map<Entities.Question>(model);
+        }
+
+        public static Entities.Option ToEntity(this Option model, IMapper mapper)
+        {
+            return mapper.Map<Entities.Option>(model);
+        }
     }
 }

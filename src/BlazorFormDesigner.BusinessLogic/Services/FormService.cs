@@ -18,5 +18,10 @@ namespace BlazorFormDesigner.BusinessLogic.Services
         {
             return await FormRepository.GetAll();
         }
+
+        public async Task<Form> Create(Form form)
+        {
+            return await FormRepository.Create(form);
+        }
     }
 }

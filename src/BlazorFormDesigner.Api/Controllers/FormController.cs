@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using BlazorFormDesigner.Api.Converters;
+using BlazorFormDesigner.BusinessLogic.Models;
 using BlazorFormDesigner.BusinessLogic.Services;
-using BlazorFormDesigner.Web.Requests;
 using BlazorFormDesigner.Web.Responses;
-using LoginApp.WebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorFormDesigner.Api.Controllers
@@ -27,6 +25,14 @@ namespace BlazorFormDesigner.Api.Controllers
             var forms = await FormService.GetAll();
 
             return Ok(forms);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Form>> Create(Form form)
+        {
+            var result = await FormService.Create(form);
+
+            return Ok(form);
         }
     }
 }
